@@ -1,0 +1,19 @@
+<div class="Container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+    <div class="mb-3">
+      <label for="name" class="form-label">DepartmentName</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+
+    <button type="submit" class="btn btn-success" style="margin-left:20%;">Add Department</button>
+
+  </form>
+  <div style="margin-left:30%; margin-top: 10px;">
+    <button type="submit" class="btn btn-danger" (click)="gotoAll()" style="text-align:center;" >Close</button>
+
+  </div>
+
+  </div>

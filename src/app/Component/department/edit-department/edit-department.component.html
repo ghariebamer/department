@@ -1,0 +1,16 @@
+<div class="Container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label for="Id" class="form-label">DepartmentId</label>
+      <input type="text" class="form-control" id="Id" formControlName="ID">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">DepartmentName</label>
+      <input type="text" class="form-control" id="name" formControlName="Name">
+    </div>
+
+    <button type="submit" class="btn btn-success">Edit Department</button>
+  </form>
+  </div>

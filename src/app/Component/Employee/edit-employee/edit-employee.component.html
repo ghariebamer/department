@@ -1,0 +1,31 @@
+<div class="Container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="ID" class="form-label">EmployeeId</label>
+      <input type="text" class="form-control" id="ID" formControlName="Id" [disabled]="true">
+    </div>
+
+    <div class="mb-3">
+      <label for="Name" class="form-label">EmployeeName</label>
+      <input type="text" class="form-control" id="Name" formControlName="Name">
+    </div>
+    <div class="mb-3">
+      <label for="Department" class="form-label">DepartmentName</label>
+      <input type="text" class="form-control" id="Department" formControlName="Department">
+    </div>
+    <div class="mb-3">
+      <label for="DateOfJoining" class="form-label">date</label>
+      <input type="text" class="form-control" id="DateOfJoining" formControlName="DateOfJoining">
+    </div>
+    <div class="mb-3">
+      <label for="Salary" class="form-label">Salary</label>
+      <input type="text" class="form-control" id="Salary" formControlName="Salary">
+    </div>
+
+    <button type="submit" class="btn btn-success" style="margin-left:30%;">update Employee</button>
+
+  </form>
+
+
+  </div>

@@ -1,0 +1,10 @@
+.adddepartment{
+
+  display: flex;
+  justify-items: center;
+}
+.adddepartment label{
+
+  font-size: 18px;
+  font-weight: 600;
+}

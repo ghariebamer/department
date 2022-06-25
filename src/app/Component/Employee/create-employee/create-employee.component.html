@@ -1,0 +1,30 @@
+<div class="Container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">EmployeeName</label>
+      <input type="text" class="form-control" id="Name" formControlName="Name">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">DepartmentName</label>
+      <input type="text" class="form-control" id="Department" formControlName="Department">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">date</label>
+      <input type="text" class="form-control" id="DateOfJoining" formControlName="DateOfJoining">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Salary</label>
+      <input type="text" class="form-control" id="Salary" formControlName="Salary">
+    </div>
+
+    <button type="submit" class="btn btn-success" style="margin-left:20%;">Add Employee</button>
+
+  </form>
+  <div style="margin-left:30%; margin-top: 10px;">
+    <button type="submit" class="btn btn-danger" (click)="gotoAll()" style="text-align:center;" >Close</button>
+
+  </div>
+
+  </div>

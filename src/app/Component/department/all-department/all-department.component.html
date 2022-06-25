@@ -1,0 +1,76 @@
+
+<div>
+  <!-- <div class="filter">
+    <ng-select [(ngModel)]="selectDepartment">
+      <ng-option *ngFor="let department of Departments" [value]="department.id">{{department.name}}</ng-option>
+   </ng-select>
+  </div> -->
+  <div class="adddepartment">
+          <div class="wrap col-md-12" >
+            <div class="search">
+              <label >search by filter:</label>
+              <input
+                type="text"
+                [(ngModel)]="term"
+                class="searchTerm"
+                placeholder="What are you looking for?"
+              />
+
+              <label>filter with department:</label>
+              <select (change)="changedata($event)">
+                <option>select your department</option>
+              <option value="{{option.name}}" *ngFor="let option of Departments"> {{option.name}}</option>
+              </select>
+
+
+              <button class="btn btn-warning" (click)="AddDepartment()"  style="margin-right:5px ;">Add Department</button>
+              <button type="button" class="btn btn-warning" (click)="ExportFile()"><i class="fa fa-file-excel-o"></i>EXPORT</button>
+
+
+            </div>
+          </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-2">ID</th>
+        <th scope="col-2">DepartmentName</th>
+        <th scope="col-2">OptionEdit</th>
+        <th scope="col-2">OptionDetails</th>
+        <th scope="col-4">OptionDelete</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of Departments | filter: term | paginate
+      : {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };">
+        <td>{{department.id}}</td>
+        <td>{{department.name}}</td>
+        <td><a class="btn btn-primary" (click)="Editdepartment(department.id)">Edit</a></td>
+
+        <td> <button (click)="getdetails(department.id)" class="btn btn-success"> Details</button> </td>
+
+        <td><button class="btn btn-danger" (click)="deleteDepartment(department.id)">Delete</button></td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
+</div>
+
+
